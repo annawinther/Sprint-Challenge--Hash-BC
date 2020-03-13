@@ -15,8 +15,8 @@ def get_indices_of_item_weights(weights, length, limit):
     """
     # if weight len less than 2 
     if length < 2:
-        # return None
-        answer = None
+        return None
+        # answer = None 
     
     # hash_table_insert(ht, weights[0], 0)
     # answer = ['test', 'working']
