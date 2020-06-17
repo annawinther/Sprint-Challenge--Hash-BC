@@ -24,11 +24,31 @@ This sprint challenge is divided up into three parts:  Hash tables coding, block
 
 Explain in detail the workings of a dynamic array:
 * What is the runtime complexity to access an array, add or remove from the front, and add or remove from the back?
+
+Access array: O(1)
+Add or remove from the back: O(1)
+Add or remove from the front O(n)
+
 * What is the worse case scenario if you try to extend the storage size of a dynamic array?
 
+Normally adding a new item to a dynamic array has a runtime of O(1) (constant time) but if the array if full and needs to be extended, then the worse case scenario will be a runtime of O(n) (linear time).
+
 Explain how a blockchain is structured. What are the blocks, what is the chain? How is the data organized?
- 
+
+A block should consist of:
+- Index - the number of the block in the chain, starting at 0 or 1, depending on the chain.
+- Timestamp - the time at which the block was created. This is not required, but is often useful.
+- Transactions - the monetary transactions, or any type of data, that is proofed by the block.
+- Proof - the proof for this block. We’ll get into this later.
+- Previous Hash - the hash of the previous block
+
+A blockchain is a chain of these blokcs, and they are chained together by the previous hash.
+
 Explain how proof of work functions. How does it operate. How does this protect the chain from attack. What kind of attack is possible?
+
+The proof of work algorithm is used to confirm transactions and produce new blocks to the chain. Its called proof of work because miners need to prove their work. They compete against each other to complete these transactions on the network. They do this by solving puzzles that takes a huge amount of processing power to complete.
+
+By chaining the blocks together by previous hash an attacker would need to change all the hashes in order to hack. It also protects the cain from the attack because it takes so long to solve the puzzels that it's impossible to attack it. However, the attack that is possible is the 51% attack. This is where a group of miners who has contorl over 50% of the network's mining hash rate, can interrupt the recordings of new blocks by preventing other miners to do complete theirs. 
 
 ## Project Set Up
 
